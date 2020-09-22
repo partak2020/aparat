@@ -23,17 +23,8 @@ class CreateFollowerTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('ID');
-
-
-            $table->foreign('ID', 'follower_ID')
-                ->references('ID')->on('userchannel')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
-
-            $table->foreign('ID', 'follower_ID')
-                ->references('ID')->on('userchannel')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            $table->integer('followerID');
+            $table->integer('followingID');
         });
     }
 
