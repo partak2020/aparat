@@ -27,6 +27,7 @@ class CreateChannelsTable extends Migration
             $table->string('phoneNo')->nullable()->default(null);
             $table->string('auth_phoneNo', 10)->nullable()->default(null);
             $table->string('password')->default(null);
+            $table->boolean('type')->default(0);
             $table->string('name')->nullable()->default(null);
             $table->string('about')->nullable()->default(null);
             $table->string('websiteAddress')->nullable()->default(null);
