@@ -21,19 +21,20 @@ class CreatePlaylistvideosTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('ID');
+            $table->id();
+            $table->unsignedBigInteger('playlist_ID');
+            $table->unsignedBigInteger('video_ID');
+            $table->timestamps();
 
+            $table->foreign('playlist_ID')
+                ->references('id')->on('playlists')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
-            $table->foreign('ID', 'playlistvideos_ID')
-                ->references('ID')->on('playlist')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
-
-            $table->foreign('ID', 'playlistvideos_ID')
-                ->references('ID')->on('videos')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            $table->foreign('video_ID')
+                ->references('id')->on('videos')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -42,8 +43,8 @@ class CreatePlaylistvideosTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

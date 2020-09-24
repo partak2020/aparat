@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -21,15 +22,15 @@ class CreateChannelcategoriesTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('ID');
-            $table->string('name', 50)->nullable()->default(null);
+            $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('channel_ID');
+            $table->timestamps();
 
-
-            $table->foreign('ID', 'channelcategories_ID')
-                ->references('ID')->on('userchannel')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            $table->foreign('channel_ID')
+                ->references('id')->on('channels')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -38,8 +39,8 @@ class CreateChannelcategoriesTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

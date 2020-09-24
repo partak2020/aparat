@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReplycommentTable extends Migration
+class CreateReplycommentsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'replycomment';
+    public $tableName = 'replycomments';
 
     /**
      * Run the migrations.
@@ -21,15 +21,15 @@ class CreateReplycommentTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('ID');
+            $table->id();
             $table->text('discription');
+            $table->unsignedBigInteger('replycomment_ID');
+            $table->timestamps();
 
-
-            $table->foreign('ID', 'replycomment_ID')
-                ->references('ID')->on('videocomments')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            $table->foreign('replycomment_ID')
+                ->references('id')->on('videocomments')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -38,8 +38,8 @@ class CreateReplycommentTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

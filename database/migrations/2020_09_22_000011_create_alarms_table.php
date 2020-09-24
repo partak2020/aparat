@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVideocommentsTable extends Migration
+class CreateAlarmsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'videocomments';
+    public $tableName = 'alarms';
 
     /**
      * Run the migrations.
-     * @table videocomments
+     * @table alarm
      *
      * @return void
      */
@@ -22,12 +22,18 @@ class CreateVideocommentsTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
-            $table->text('discription');
-            $table->unsignedBigInteger('userchannel_ID');
+            $table->string('title');
+            $table->unsignedBigInteger('doer_ID');
+            $table->unsignedBigInteger('object_ID');
             $table->unsignedBigInteger('video_ID');
             $table->timestamps();
 
-            $table->foreign('userchannel_ID')
+            $table->foreign('doer_ID')
+                ->references('id')->on('channels')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+            $table->foreign('object_ID')
                 ->references('id')->on('channels')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

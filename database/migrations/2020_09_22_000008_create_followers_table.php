@@ -4,17 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVideosTable extends Migration
+class CreateFollowersTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'videos';
+    public $tableName = 'followers';
 
     /**
      * Run the migrations.
-     * @table videos
+     * @table follower
      *
      * @return void
      */
@@ -22,16 +22,17 @@ class CreateVideosTable extends Migration
     {
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
-            $table->string('fileAddress');
-            $table->string('name');
-            $table->text('discription');
-            $table->tinyInteger('status')->default('0');
-            $table->string('videoID', 5);
-            $table->unsignedBigInteger('aparatcategory_ID');
+            $table->unsignedBigInteger('follower_ID');
+            $table->unsignedBigInteger('following_ID');
             $table->timestamps();
 
-            $table->foreign('aparatcategory_ID')
-                ->references('id')->on('aparatcategories')
+            $table->foreign('follower_ID')
+                ->references('id')->on('channels')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+                
+            $table->foreign('following_ID')
+                ->references('id')->on('channels')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

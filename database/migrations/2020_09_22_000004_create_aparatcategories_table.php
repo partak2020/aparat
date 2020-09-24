@@ -21,10 +21,10 @@ class CreateAparatcategoriesTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('ID');
-            $table->string('title', 50);
+            $table->id();
+            $table->string('title');
             $table->text('discription')->nullable()->default(null);
+            $table->timestamps();
         });
     }
 
@@ -33,8 +33,8 @@ class CreateAparatcategoriesTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }

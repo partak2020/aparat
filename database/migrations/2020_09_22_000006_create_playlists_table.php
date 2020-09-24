@@ -4,13 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePlaylistTable extends Migration
+class CreatePlaylistsTable extends Migration
 {
     /**
      * Schema table name to migrate
      * @var string
      */
-    public $tableName = 'playlist';
+    public $tableName = 'playlists';
 
     /**
      * Run the migrations.
@@ -21,17 +21,17 @@ class CreatePlaylistTable extends Migration
     public function up()
     {
         Schema::create($this->tableName, function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->increments('ID');
-            $table->string('name', 50);
+            $table->id();
+            $table->string('name');
             $table->tinyInteger('privatePlaylist')->default('1');
-            $table->string('discription', 150)->nullable()->default(null);
+            $table->string('discription')->nullable()->default(null);
+            $table->unsignedBigInteger('channel_ID');
+            $table->timestamps();
 
-
-            $table->foreign('ID', 'playlist_ID')
-                ->references('ID')->on('userchannel')
-                ->onDelete('restrict')
-                ->onUpdate('restrict');
+            $table->foreign('channel_ID')
+                ->references('id')->on('channels')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -40,8 +40,8 @@ class CreatePlaylistTable extends Migration
      *
      * @return void
      */
-     public function down()
-     {
-       Schema::dropIfExists($this->tableName);
-     }
+    public function down()
+    {
+        Schema::dropIfExists($this->tableName);
+    }
 }
