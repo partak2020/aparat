@@ -26,8 +26,9 @@ class CreateChannelsTable extends Migration
             $table->string('email')->nullable()->default(null);
             $table->string('phoneNo')->nullable()->default(null);
             $table->string('auth_phoneNo', 10)->nullable()->default(null);
-            $table->string('password')->default(null);
+            $table->string('password');
             $table->boolean('type')->default(0);
+            $table->boolean('status')->default(1);
             $table->string('name')->nullable()->default(null);
             $table->string('about')->nullable()->default(null);
             $table->string('websiteAddress')->nullable()->default(null);
@@ -55,7 +56,7 @@ class CreateChannelsTable extends Migration
             $table->string('juridical_phoneNo')->nullable()->default(null);
             $table->string('juridical_cellPhoneNo')->nullable()->default(null);
             $table->string('juridical_address')->nullable()->default(null);
-            $table->unsignedBigInteger('aparatcategory_ID');
+            $table->unsignedBigInteger('aparatcategory_ID')->nullable()->default(null);
             $table->timestamps();
 
 
