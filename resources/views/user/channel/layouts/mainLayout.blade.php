@@ -30,19 +30,7 @@
         <ul class="sidebar navbar-nav pb-5 bg-light">
             @include('user.layouts.sidebar')
         </ul>
-        <div id="content-wrapper">
-            <!-- /.container-fluid -->
-            <div class="container-fluid pb-0">
-                <div class="top-mobile-search overflow-hidden rounded-pill">
-                    @include('user.layouts.mobileSearch')
-                </div>
-                @yield('content')
-            </div>
-            <!--Footer -->
-            <footer class="sticky-footer">
-                @include('user.layouts.footer')
-            </footer>
-        </div>
+        @yield('content')
     </div>
     <!-- /.content-wrapper -->
     </div>
