@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('user.main.mainPage');
+})->name('home');
+
+Route::get('/upload', function () {
+    return view('user.video.upload');
+})->name('upload');
+
+Route::get('/channel', function () {
+    return view('user.channel.channel');
+})->name('channel');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
