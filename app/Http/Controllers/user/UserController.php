@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
+use App\User;
 
 class UserController extends Controller
 {
@@ -17,7 +18,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        //return user list
+        $users = User::orderby('id','DESC');
+        return view('admin.users.users',compact('users'));
     }
 
     /**

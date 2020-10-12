@@ -20,3 +20,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/Administrator', function () {
+    return view('admin/layouts/dashboardlayout');
+});
+
+Route::prefix('admin')->group(function(){
+    Route::get('/users','user\UserController@index')->name('admin.users.index');
+    Route::get('/videos','video\VideoController@index')->name('admin.videos.index');
+    Route::get('/categories','aparatcategory\CategoryController@index')->name('admin.aparatcategories.index');
+    Route::get('/comments','videocomment\CommentController@index')->name('admin.videocomments.index');
+    Route::get('/playlists','playlist\PlaylistController@index')->name('admin.playlists.index');
+});
