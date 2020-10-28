@@ -28,7 +28,6 @@ class PhoneNumber implements Rule
         if (isset($value)) {
             $non_cahrs = [' '];
             $value = str_replace($non_cahrs, '', $value);
-            // dd($value);
             if (strlen($value) == 11) {
                 return true;
             }
