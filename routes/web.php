@@ -39,3 +39,27 @@ Route::prefix('admin')->group(function(){
     Route::get('/playlists','playlist\PlaylistController@index')->name('admin.playlists.index');
 });
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/password/update/phone', 'Auth\ResetPasswordController@resetPasswordPhone')
+    ->name('password.update.withphone');
+
+Route::get('/password/reset/phone', function () {
+    return view('auth.passwords.resetWithPhone');
+})->name('password.reset.phone');
+
+Route::get('/password/reset/username', function () {
+    return view('auth.passwords.emailOrPhone');
+})->name('password.reset.username');
+
+Route::post('password/reset/with/phone', 'Auth\ForgotPasswordController@sendResetLinkEmail')
+    ->name('password.reset.with.phone');
+
+Route::post('password/reset/with/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')
+    ->name('password.reset.with.email');
+
+    
+Route::get('/codeValidateion', 'Auth\ResetPasswordController@showGetCodeForm')->name('code.validation');
+
+Route::post('/password/checkCode', 'Auth\ResetPasswordController@checkCode')->name('password.check.code');
+
+
