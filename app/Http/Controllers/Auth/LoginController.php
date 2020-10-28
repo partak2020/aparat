@@ -8,7 +8,6 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Rules\PhoneNumber;
 use App\Rules\UserName;
-use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {

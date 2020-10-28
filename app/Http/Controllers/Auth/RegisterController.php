@@ -9,10 +9,12 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\PhoneNumber;
-use Laravel\Ui\Presets\React;
 
 class RegisterController extends Controller
 {
+
+    public $field_type;
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -75,6 +77,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // dd($data);
         // dd($this->field_type);
 
         return User::create([
