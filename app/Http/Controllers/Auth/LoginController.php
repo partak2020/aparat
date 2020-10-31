@@ -103,6 +103,7 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         $unique_field = $request->unique_field;
+
         switch (true) {
             case is_numeric($unique_field):
                 // validation phone number
@@ -111,7 +112,6 @@ class LoginController extends Controller
                     'unique_field' => ['required', new PhoneNumber],
                     'password' => 'required|string|min:8',
                 ]);
-                // dd($this->field_type);
                 break;
 
             case filter_var($unique_field, FILTER_VALIDATE_EMAIL):

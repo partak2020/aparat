@@ -9,6 +9,10 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\PhoneNumber;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+
 
 class RegisterController extends Controller
 {
@@ -77,9 +81,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // dd($data);
-        // dd($this->field_type);
-
         return User::create([
             'name' => $data['name'],
             $this->field_type => $data['unique_field'],
@@ -92,12 +93,65 @@ class RegisterController extends Controller
         $unique_field = $request->unique_field;
         if (is_numeric($unique_field)) {
             // user insert phone number for login
-            $this->field_type = 'phoneNo' ;
-            $this->phone_validator($request->all())->validate();
+            $this->field_type = 'phoneNo';
+            return $this->phone_validator($request->all())->validate();
         } elseif (filter_var($unique_field, FILTER_VALIDATE_EMAIL)) {
             // user insert email for login
-            $this->field_type = 'email' ;
-            $this->email_validator($request->all())->validate();
+            $this->field_type = 'email';
+            return $this->email_validator($request->all())->validate();
+        } else {
+            return false;
         }
     }
+
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function register(Request $request)
+    {
+        // this method define type of unique field and validate data
+        if(!($this->define_type($request))){
+            return redirect()->back()
+                ->with('status', 'لطفا از ایمیل یا شماره موبایل معتبر استفاده کنید.');
+        }
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        if ($response = $this->registered($request, $user)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new Response('', 201)
+            : redirect($this->redirectPath());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
