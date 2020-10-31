@@ -46,7 +46,7 @@ Route::post('password/reset/with/email', 'Auth\ForgotPasswordController@sendRese
 Auth::routes();
 
 Route::get('/Administrator', function () {
-    return view('admin/layouts/dashboardlayout');
+    return view('admin/main/dashboard');
 });
 
 Route::get('/codeValidateion', 'Auth\ResetPasswordController@showGetCodeForm')->name('code.validation');

@@ -1,7 +1,14 @@
 @extends('admin.layouts.dashboardlayout')
 @section('content')
-    <div class="table-responsive">
-        <table class="table table-bordered">
+<div class="section-padding table-responsive">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="main-title float-right">
+                <h6>دسته‌بندی‌های آپارات</h6>
+            </div>
+        </div>
+        <div class="col-xl-3 col-sm-6 mb-3">
+            <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ردیف</th>
@@ -23,4 +30,5 @@
             </tbody>
         </table>
     </div>
+</div>
 @endsection
