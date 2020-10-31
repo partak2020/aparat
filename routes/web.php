@@ -17,9 +17,8 @@ Route::get('/', function () {
     return view('user.main.mainPage');
 })->name('home');
 
-Route::get('/upload', function () {
-    return view('user.video.upload');
-})->name('upload');
+Route::get('/upload', 'uploadvideo\UploadVideoController@index')->name('upload');
+Route::post('/upload', 'uploadvideo\UploadVideoController@store')->name('store.video');
 
 Route::get('/channel', function () {
     return view('user.channel.channel');
