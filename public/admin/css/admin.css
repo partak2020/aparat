@@ -464,12 +464,12 @@ body.sidebar-toggled footer.sticky-footer {
     z-index: 99;
 }
 
-.osahan-nav {
+.partak-nav {
     box-shadow: 0 0 10px #f2f2f2;
     padding: 0;
 }
 
-.osahan-navbar-search .form-control {
+.partak-navbar-search .form-control {
     background: #eceff0 none repeat scroll 0 0;
     border: medium none;
     font-size: 14px;
@@ -477,23 +477,23 @@ body.sidebar-toggled footer.sticky-footer {
     width: 607px !important;
 }
 
-.osahan-navbar-search {
+.partak-navbar-search {
     margin-right: 84px !important;
 }
 
-.osahan-navbar-search .btn {
+.partak-navbar-search .btn {
     background: #eceff0 none repeat scroll 0 0;
     border: medium none;
     font-size: 14px;
     padding: 0 18px;
 }
 
-.osahan-right-navbar .nav-link {
+.partak-right-navbar .nav-link {
     padding: 17px 13px !important;
     position: relative;
 }
 
-.osahan-right-navbar {
+.partak-right-navbar {
     margin: 0 7px 0 0;
 }
 
@@ -1425,28 +1425,28 @@ h6 {
     width: 100%;
 }
 
-.osahan-title {
+.partak-title {
     color: #000;
     font-weight: 600;
 }
 
-.osahan-size {
+.partak-size {
     font-size: 11px;
 }
 
-.osahan-progress .progress {
+.partak-progress .progress {
     border-radius: 2px;
     height: 8px;
     margin: 14px 0;
 }
 
-.osahan-close {
+.partak-close {
     position: absolute;
     right: 18px;
     top: 0;
 }
 
-.osahan-desc {
+.partak-desc {
     font-size: 12px;
     opacity: 0.7;
 }
@@ -1693,48 +1693,6 @@ h6 {
 }
 
 
-/* Footer */
-
-.app img {
-    background: #231f20 none repeat scroll 0 0;
-    border-radius: 3px;
-    height: 38px;
-    margin: 5px 0 0;
-    object-fit: scale-down;
-    padding: 3px 4px;
-}
-
-.footer-list .app img {
-    height: 28px;
-}
-
-.footer-list {
-    padding: 20px 0;
-}
-
-.footer-list ul {
-    margin: 0;
-    padding: 0;
-}
-
-.footer-list ul li {
-    list-style: outside none none;
-}
-
-.footer-list ul li a {
-    color: #666;
-    line-height: 23.9px;
-}
-
-.footer-list {
-    margin: 7px 0 0;
-}
-
-.footer-logo {
-    margin: 0 0 51px !important;
-}
-
-
 /* Mobile Media */
 
 
@@ -1799,11 +1757,11 @@ h6 {
     footer .text-right {
         text-align: center !important;
     }
-    .osahan-right-navbar .nav-link {
+    .partak-right-navbar .nav-link {
         font-size: 0;
         padding: 22px 5px !important;
     }
-    .osahan-right-navbar .nav-link .fas {
+    .partak-right-navbar .nav-link .fas {
         font-size: 12px;
     }
     #sidebarToggle {
@@ -1838,7 +1796,7 @@ h6 {
     .imgplace {
         margin-bottom: 15px;
     }
-    .osahan-title {
+    .partak-title {
         padding: 0 25px 5px 0;
     }
     footer.sticky-footer {
@@ -1930,11 +1888,11 @@ h6 {
     footer .text-right {
         text-align: right !important;
     }
-    .osahan-right-navbar .nav-link {
+    .partak-right-navbar .nav-link {
         font-size: 0;
         padding: 22px 5px !important;
     }
-    .osahan-right-navbar .nav-link .fas {
+    .partak-right-navbar .nav-link .fas {
         font-size: 12px;
     }
     #sidebarToggle {
@@ -1969,7 +1927,7 @@ h6 {
     .imgplace {
         margin-bottom: 15px;
     }
-    .osahan-title {
+    .partak-title {
         padding: 0 25px 5px 0;
     }
     footer.sticky-footer {
@@ -2035,11 +1993,11 @@ h6 {
     .video-card-image img {
         width: 100%;
     }
-    .osahan-right-navbar .nav-link {
+    .partak-right-navbar .nav-link {
         font-size: 0;
         padding: 22px 5px !important;
     }
-    .osahan-right-navbar .nav-link .fas {
+    .partak-right-navbar .nav-link .fas {
         font-size: 12px;
     }
     #sidebarToggle {
@@ -2072,16 +2030,16 @@ h6 {
     .single-channel-nav .nav-link {
         margin: 0;
     }
-    .osahan-navbar-search .form-control {
+    .partak-navbar-search .form-control {
         width: auto !important;
     }
-    .osahan-navbar-search {
+    .partak-navbar-search {
         margin-right: 15px !important;
     }
     .imgplace {
         margin-bottom: 15px;
     }
-    .osahan-title {
+    .partak-title {
         padding: 0 25px 5px 0;
     }
 }
@@ -2114,11 +2072,11 @@ h6 {
     .video-card-image img {
         width: 100%;
     }
-    .osahan-right-navbar .nav-link {
+    .partak-right-navbar .nav-link {
         font-size: 0;
         padding: 22px 5px !important;
     }
-    .osahan-right-navbar .nav-link .fas {
+    .partak-right-navbar .nav-link .fas {
         font-size: 12px;
     }
     #sidebarToggle {
@@ -2155,10 +2113,10 @@ h6 {
     .single-channel-nav .btn-outline-success {
         display: none;
     }
-    .osahan-navbar-search .form-control {
+    .partak-navbar-search .form-control {
         width: auto !important;
     }
-    .osahan-navbar-search {
+    .partak-navbar-search {
         margin-right: 15px !important;
     }
 }
