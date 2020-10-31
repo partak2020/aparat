@@ -1,9 +1,15 @@
 @extends('layouts.loginLayout')
 @section('form')
-    <form action="{{route('login')}}" method="POST" class="">
+    @if ($errors->any())
+        {{-- {{ dd($errors) }} --}}
+        @foreach ($errors->all() as $error)
+            {{$error}}
+        @endforeach
+    @endif
+    <form action="{{ route('login') }}" method="POST" class="">
         @csrf
         <div class="form-group">
-            <input type="text" name="uniqe-field" class="form-control" placeholder="ایمیل / نام کاربری / شماره موبایل">
+            <input type="text" name="unique_field" class="form-control" placeholder="ایمیل / نام کاربری / شماره موبایل">
         </div>
         <div class="form-group">
             <input type="password" name="password" class="form-control" placeholder="رمز عبور">

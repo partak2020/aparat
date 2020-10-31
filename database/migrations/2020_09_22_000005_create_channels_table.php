@@ -57,6 +57,7 @@ class CreateChannelsTable extends Migration
             $table->string('juridical_cellPhoneNo')->nullable()->default(null);
             $table->string('juridical_address')->nullable()->default(null);
             $table->unsignedBigInteger('aparatcategory_ID')->nullable()->default(null);
+            $table->rememberToken();
             $table->timestamps();
 
 
