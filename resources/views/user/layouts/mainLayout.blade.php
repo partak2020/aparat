@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Askbootstrap">
     <meta name="author" content="Askbootstrap">
-    <title>VIDOE - Video Streaming Website HTML Template</title>
+    <title>@yield('pageTitle')</title>
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="{{ url('user/img/favicon.png') }}">
     <!-- Bootstrap core CSS-->
-
     <link rel="stylesheet" href="{{ url('user/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('user/font/css/all.min.css') }}"> 
     <link rel="stylesheet" href="{{ url('user/css/partak.css') }}">
@@ -66,7 +65,11 @@
     <script src="{{ url('user/js/chosen.proto.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.min.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.js') }}"></script>
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 5fcbf3d86479114232862686a6d60eda8b3264ae
     <script>
         $(".chosen-select").chosen({
             rtl: true

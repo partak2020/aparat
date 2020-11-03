@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class PhoneNumber implements Rule
+class codeValidation implements Rule
 {
     /**
      * Create a new rule instance.
@@ -28,7 +28,7 @@ class PhoneNumber implements Rule
         if (isset($value)) {
             $non_cahrs = [' '];
             $value = str_replace($non_cahrs, '', $value);
-            if (strlen($value) == 11) {
+            if (strlen($value) == 6) {
                 return true;
             }
             return false;
@@ -42,6 +42,6 @@ class PhoneNumber implements Rule
      */
     public function message()
     {
-        return 'شماره مبایل وارد شده صحیح نمیباشد.';
+        return 'your code must be 6 ';
     }
 }

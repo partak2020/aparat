@@ -18,14 +18,14 @@
 </head>
 
 <body id="page-top" dir="rtl">
-    <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
+    <nav class="navbar navbar-expand navbar-light bg-white static-top partak-nav sticky-top">
         &nbsp;&nbsp;
         <button class="btn btn-link btn-sm text-secondary order-1 order-sm-0" id="sidebarToggle">
          
          </button> &nbsp;&nbsp;
         <a class="navbar-brand mr-1" href="index.html"><img class="img-fluid" alt="" src="{{ url('admin/img/logo--color-black--without_text@32px.png')}}"></a>
         <!-- Navbar Search -->
-        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 osahan-navbar-search">
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-5 my-2 my-md-0 partak-navbar-search">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search for...">
                 <div class="input-group-append">
@@ -39,8 +39,8 @@
             </div>
         </form>
         <!-- Navbar -->
-        <ul class="navbar-nav ml-auto ml-md-0 osahan-right-navbar">
-            <li class="nav-item dropdown no-arrow osahan-right-navbar-user float-left">
+        <ul class="navbar-nav ml-auto ml-md-0 partak-right-navbar">
+            <li class="nav-item dropdown no-arrow partak-right-navbar-user float-left">
                 <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Avatar" src="{{ url('admin/img/favicon.png') }}"> partak team &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
@@ -127,7 +127,8 @@
                         </div>
                     </div>
                 </div>
-                <hr> @yield('content')
+                <hr> 
+                @yield('content')
             </div>
         </div>
         <!-- /.container-fluid -->
