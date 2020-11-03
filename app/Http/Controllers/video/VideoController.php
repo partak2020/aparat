@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\video;
 
-use Symfony\Component\HttpFoundation\Session\Session;
 use App\Http\Controllers\Controller;
-use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Validator;
-use App\User;
+use App\Video;
 
-class UserController extends Controller
+class VideoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //return user list
-        $users = User::orderby('id','DESC');
-        return view('admin.users.users',compact('users'));
+        //return video list
+        $videos = Video::orderby('id','DESC');
+        return view('admin.videos.videos',compact('videos'));
     }
 
     /**
@@ -87,27 +84,5 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function filed_type(request $request)
-    {
-        // $validation = $request->validate(['unique_field' => 'required|regex:/(01)[0-9]{9}/']);
-        // $request->session()->reflash('errors', 'Your mobile number not match in our system..!!');
-        // $validator = new validator();
-        // $validator->getMessageBag()->add('password', 'Password wrong');
-
-        // $unique_field = $request->unique_field;
-        // $result = 'hh';
-        // if (is_numeric($unique_field)) {
-        //     //user insert phone number for login
-
-        //     $validation = $request->validate(['unique_field' => ['required',new PhoneNumber]]);
-        //     dd($validation);
-        //     $result = 'you are logig with phone number';
-        // } elseif (filter_var($unique_field, FILTER_VALIDATE_EMAIL)) {
-        //     // user insert email for login
-        //     $result = 'you are logig with email address';
-        // }
-        // return view('welcome');
     }
 }

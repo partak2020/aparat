@@ -1,12 +1,4 @@
 /*
-Template Name: VIDOE - Video Streaming Website HTML Template
-Author: Askbootstrap
-Author URI: https://themeforest.net/user/askbootstrap
-Version: 1.0
-*/
-
-
-/*
 	-- Body 
 	-- Nav
 	-- Sidebar
@@ -38,18 +30,14 @@ body {
     height: 100%;
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {}
+@font-face {
+    font-family: mainFont;
+    src: url(../font/IranianSans.ttf);
+}
+
+* {
+    font-family: mainFont;
+}
 
 #wrapper {
     display: -webkit-box;
@@ -93,10 +81,10 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 @media (min-width: 768px) {
     body.fixed-nav #content-wrapper {
-        padding-right: 225px;
+        padding-left: 225px;
     }
     body.fixed-nav.sidebar-toggled #content-wrapper {
-        padding-right: 90px;
+        padding-left: 90px;
     }
 }
 
@@ -108,12 +96,12 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
     background: rgba(52, 58, 64, 0.5) none repeat scroll 0 0;
     border-radius: 70px !important;
     bottom: 86px;
-    color: #fff;
+    color: rgb(15, 15, 15);
     display: none;
     height: 50px;
     line-height: 46px;
     position: fixed;
-    right: 15px;
+    left: 15px;
     text-align: center;
     width: 50px;
 }
@@ -170,12 +158,6 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
     vertical-align: 0;
     border: 0;
     font-weight: 900;
-    content: '\f105';
-    font-family: 'Font Awesome 5 Free';
-}
-
-.navbar-nav .nav-item.dropdown.show .dropdown-toggle::after {
-    content: '\f107';
 }
 
 .navbar-nav .nav-item.dropdown.no-arrow .dropdown-toggle::after {
@@ -208,16 +190,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .sidebar {
     width: 90px !important;
-    background: #ff516b;
-    /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #ff516b 0%, #826cfd 100%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #ff516b 0%, #826cfd 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #ff516b 0%, #826cfd 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ff516b', endColorstr='#826cfd', GradientType=1);
-    /* IE6-9 fallback on horizontal gradient */
+    background: #cecccc;
     min-height: 100%;
     z-index: 9;
     padding: 2px 0;
@@ -274,13 +247,13 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 }
 
 .sidebar .nav-item .nav-link {
-    color: #ffffff;
+    color: #000;
 }
 
 .sidebar .nav-item .nav-link:active,
 .sidebar .nav-item .nav-link:focus,
 .sidebar .nav-item .nav-link:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: #ed145b;
 }
 
 .sidebar.toggled {
@@ -478,7 +451,7 @@ body.sidebar-toggled footer.sticky-footer {
 @media (min-width: 768px) {
     body.sidebar-toggled footer.sticky-footer {
         width: calc(100% - 90px);
-        margin-right: 90px;
+        margin-left: 90px;
     }
 }
 
@@ -569,7 +542,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .channel-sidebar-list h6 {
-    color: #fff;
+    color: rgb(2, 2, 2);
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -590,7 +563,7 @@ body.sidebar-toggled footer.sticky-footer {
 }
 
 .channel-sidebar-list li a {
-    color: #fff;
+    color: #111010;
     display: inline-block;
     overflow: hidden;
     padding: 6px 0;
@@ -1753,7 +1726,7 @@ h6 {
     line-height: 23.9px;
 }
 
-.footer-list .mb-0 {
+.footer-list {
     margin: 7px 0 0;
 }
 
@@ -1773,15 +1746,15 @@ h6 {
     }
     #wrapper #content-wrapper .container-fluid {
         padding-bottom: 15px !important;
-        padding-right: 108px;
-        padding-left: 15px !important;
+        padding-left: 15px;
+        padding-right: 108px !important;
         padding-top: 1rem !important;
     }
     .sidebar .nav-item .nav-link {
         padding: 8px 14px !important;
     }
     .sidebar-toggled #wrapper #content-wrapper .container-fluid {
-        padding-right: 15px;
+        padding-left: 15px;
     }
     .single-channel-page {
         padding: 0 0 0 90px !important;
@@ -1869,7 +1842,7 @@ h6 {
         padding: 0 25px 5px 0;
     }
     footer.sticky-footer {
-        margin-left: 90px;
+        margin-right: 90px;
     }
     .sidebar-toggled footer.sticky-footer {
         margin: 0;
@@ -1912,8 +1885,8 @@ h6 {
     }
     #wrapper #content-wrapper .container-fluid {
         padding-bottom: 15px !important;
-        padding-left: 15px !important;
-        padding-right: 108px;
+        padding-left: 15px;
+        padding-right: 108px !important;
         padding-top: 1rem !important;
     }
     .sidebar .nav-item .nav-link {
@@ -1923,7 +1896,7 @@ h6 {
         padding-right: 15px;
     }
     .single-channel-page {
-        padding: 0 0 0 90px !important;
+        padding: 0 90px 0 0 !important;
     }
     .sidebar-toggled .single-channel-page {
         padding: 0 !important;
@@ -1952,7 +1925,7 @@ h6 {
     }
     footer {
         padding: 15px 0 !important;
-        text-align: left;
+        text-align: right;
     }
     footer .text-right {
         text-align: right !important;
@@ -2040,15 +2013,15 @@ h6 {
 @media (min-width: 768px) and (max-width: 991.98px) {
     #wrapper #content-wrapper .container-fluid {
         padding-bottom: 15px !important;
-        padding-right: 243px;
-        padding-left: 15px !important;
+        padding-left: 15px;
+        padding-right: 243px !important;
         padding-top: 1rem !important;
     }
     .sidebar .nav-item .nav-link {
         padding: 8px 14px !important;
     }
     .sidebar-toggled #wrapper #content-wrapper .container-fluid {
-        padding-right: 105px;
+        padding-left: 105px;
     }
     .single-channel-page {
         padding: 0 0 0 225px !important;
@@ -2119,21 +2092,21 @@ h6 {
 @media (min-width: 992px) and (max-width: 1199.98px) {
     #wrapper #content-wrapper .container-fluid {
         padding-bottom: 15px !important;
-        padding-right: 243px;
-        padding-left: 15px !important;
+        padding-left: 15px;
+        padding-right: 243px !important;
         padding-top: 1rem !important;
     }
     .sidebar .nav-item .nav-link {
         padding: 8px 14px !important;
     }
     .sidebar-toggled #wrapper #content-wrapper .container-fluid {
-        padding-right: 105px;
+        padding-left: 105px;
     }
     .single-channel-page {
-        padding: 0 0 0 225px !important;
+        padding: 0 225px 0 0 !important;
     }
     .sidebar-toggled .single-channel-page {
-        padding: 0 0 0 90px !important;
+        padding: 0 90px 0 0 !important;
     }
     .single-channel-page .container-fluid {
         padding: 30px 15px 15px !important;
@@ -2149,7 +2122,7 @@ h6 {
         font-size: 12px;
     }
     #sidebarToggle {
-        margin: 0 9px 0 0;
+        margin: 0 0 0 9px;
     }
     .navbar-brand img {
         vertical-align: top;
@@ -2173,7 +2146,7 @@ h6 {
         padding: 1px 3px;
     }
     .single-channel-nav .navbar-nav {
-        margin: 0 0 0 20px;
+        margin: 0 20px 0 0;
     }
     .single-channel-nav .nav-link {
         margin: 0 7px;
