@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="{{ url('user/img/favicon.png') }}">
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="{{ url('user/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('user/font/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url('user/font/css/all.min.css') }}"> 
     <link rel="stylesheet" href="{{ url('user/css/partak.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/owl.theme.css') }}">
@@ -55,7 +55,6 @@
     </a>
     <!-- Logout Modal-->
     {{-- @include('user.layouts.logout') --}}
-
     <script src="{{ url('user/js/jquery.min.js') }}"></script>
     <script src="{{ url('user/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url('user/js/owl.carousel.js') }}"></script>
@@ -65,7 +64,6 @@
     <script src="{{ url('user/js/chosen.proto.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.min.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.js') }}"></script>
-
     <script>
         $(".chosen-select").chosen({
             rtl: true
@@ -79,8 +77,6 @@
             document.getElementById("waitForUploading").style.display = "none";
             document.getElementById("Uploading").style.display = "block";
         }
-
     </script>
 </body>
-
 </html>

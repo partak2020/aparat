@@ -77,6 +77,7 @@
         <span>دیگر دسته بندی ها</span>
     </a>
 </li>
+
 {{-- end categories --}}
 <li class="nav-item sidebar-part">
     <h6 class="sidebar-part-title">دنبال شدگان</h6>
@@ -97,12 +98,28 @@
     <h6 class="sidebar-part-title">دیگر صفحات آپارات</h6>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="upload-video.html">
-        <i class="fas fa-fw fa-cloud-upload-alt"></i>
-        <span>Upload Video</span>
+    <a class="nav-link" href="#">
+        {{-- <i class="fas fa-fw fa-cloud-upload-alt"></i> --}}
+        <span>تبلیغات</span>
     </a>
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <span>قوانین</span>
+        </a>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#">
+                <span>سوالات متداول</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="history-page.html">
+                    {{-- <i class="fas fa-fw fa-history"></i> --}}
+                    <span>تماس با ما </span>
+                </a>
+            </li>
 </li>
-<li class="nav-item dropdown">
+{{-- <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
         aria-expanded="false">
         <i class="fas fa-fw fa-folder"></i>
@@ -122,12 +139,7 @@
         <a class="dropdown-item" href="contact.html">Contact</a>
     </div>
 </li>
-<li class="nav-item">
-    <a class="nav-link" href="history-page.html">
-        <i class="fas fa-fw fa-history"></i>
-        <span>History Page</span>
-    </a>
-</li>
+
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="categories.html" role="button" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
@@ -139,4 +151,4 @@
         <a class="dropdown-item" href="categories.html">Music</a>
         <a class="dropdown-item" href="categories.html">Television</a>
     </div>
-</li>
+</li> --}}

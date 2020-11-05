@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('user.main.mainPage');
+// })->name('home');
+
+// Route::get('/upload', function () {
+//     return view('user.video.upload');
+// })->name('upload');
+
+// Route::get('/channel', function () {
+//     return view('user.channel.channel');
+// })->name('channel');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('user.main.mainPage');
 })->name('home');
@@ -61,3 +76,4 @@ Route::prefix('admin')->group(function () {
     Route::get('/playlists', 'playlist\PlaylistController@index')->name('admin.playlists.index');
 });
 // Route::get('/home', 'HomeController@index')->name('home');
+
