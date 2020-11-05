@@ -89,8 +89,7 @@
                             <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group" style="width: 100%">
-                                        <label class="col-sm-3 col-form-label pr-0" for="e6">افزودن به لیست
-                                            پخش</label>
+                                        <label class="col-sm-3 col-form-label pr-0" for="e6">افزودن به لیست پخش</label>
                                         <div id="output"></div>
                                         <select class="chosen-select" id="e6" name="videoTag[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">
@@ -102,8 +101,6 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
                                 <div class="col-lg-3">
                                     <div class="form-group" style="width: 100%">
                                         <label class="col-sm-3 col-form-label pr-0" for="e7">برچسب‌های ویدیو</label>
