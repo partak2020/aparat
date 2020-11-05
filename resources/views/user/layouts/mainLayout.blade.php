@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ url('user/css/bootstrap-rtl.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/bootstrap-rtl.min.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/chosen.css') }}">
-    <link rel="stylesheet" href="{{ url('user/css/chosen.min.css') }}">   
+    <link rel="stylesheet" href="{{ url('user/css/chosen.min.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -65,11 +65,21 @@
     <script src="{{ url('user/js/chosen.proto.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.min.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.js') }}"></script>
-    
+
     <script>
         $(".chosen-select").chosen({
             rtl: true
         });
+        if (document.getElementById("e6_chosen") && document.getElementById("e7_chosen")) {
+            document.getElementById("e6_chosen").style.width = "100%";
+            document.getElementById("e7_chosen").style.width = "100%";
+        }
+        if (document.getElementById("inputFile").files.length != 0) {
+            console.log();
+            document.getElementById("waitForUploading").style.display = "none";
+            document.getElementById("Uploading").style.display = "block";
+        }
+
     </script>
 </body>
 
