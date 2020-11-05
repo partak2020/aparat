@@ -18,7 +18,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/upload', 'uploadvideo\UploadVideoController@index')->name('upload');
-Route::post('/upload', 'uploadvideo\UploadVideoController@store')->name('store.video');
+Route::post('/upload', 'uploadvideo\UploadVideoController@store')->name('store.video');//->middleware('ValidatePostSize');
 
 Route::get('/channel', function () {
     return view('user.channel.channel');
