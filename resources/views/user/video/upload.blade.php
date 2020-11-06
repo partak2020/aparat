@@ -1,7 +1,7 @@
 @extends('user.layouts.mainLayout')
 @section('pageTitle', 'بارگذاری ویدیو')
-@section('content') 
-    <div onload="UploadingView()">
+@section('content')
+    <div>
         <form method="POST" action="{{ route('store.video') }}" enctype="multipart/form-data">
             @csrf
             <div id="waitForUploading" class="row pb-5">
@@ -13,10 +13,9 @@
                             name="inputFile"
                             accept=".mp4,.mv,.mov,.qt,.ts,.3gp,.3gpp,.3g2,.3gp2,.mpg,.mpeg,.mp1,.mp2,.m1v,.m1a,.m2a,.mpa,.mpv,.mpv2,.mpe,.m4a,.m4p,.m4b,.m4r,.m4v,.avi,.flv,.f4v,.f4p,.f4a,.f4b,.vob,.lsf,.lsx,.asf,.asr,.asx,.webm,.mkv,.wmv,.y4m" />
                         <label class="btn btn-primary rounded-pill" for="inputFile">
-                            انتخاب فایل <input type="file" style="display: none;">
+                            انتخاب فایل
                         </label>
                     </div>
-
                 </div>
             </div>
             <div id="Uploading" class="container-fluid upload-details pr-0" style="display:none">
@@ -86,46 +85,50 @@
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="e6">افزودن به لیست پخش</label>
-                                        <select id="e6" class="custom-select" name="playListVideo[]"
-                                            data-placeholder="انتخاب کنید">
-                                            <option></option>
+                                    <div class="form-group" style="width: 100%">
+                                        <label class="col-sm-3 col-form-label pr-0" for="e6">افزودن به لیست پخش</label>
+                                        <div id="output"></div>
+                                        <select class="chosen-select" id="e6" name="videoTag[]" multiple="multiple"
+                                            data-placeholder="انتخاب کنید" style="width:400px">
+                                            {{-- @foreach ($categories as $cat_id => $cat_name)
+                                                <option value="{{ $cat_id }}">{{ $cat_name }}</option>
+                                            @endforeach --}}
+                                            <option value="0">hi</option>
+                                            <option value="1">hello</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group" style="width: 100%">
+                                        <label class="col-sm-3 col-form-label pr-0" for="e7">برچسب‌های ویدیو</label>
+                                        <div id="output"></div>
+                                        <select class="chosen-select" id="e7" name="videoTag[]" multiple="multiple"
+                                            data-placeholder="انتخاب کنید" style="width:400px">
+                                            {{-- @foreach ($categories as $cat_id => $cat_name)
+                                                <option value="{{ $cat_id }}">{{ $cat_name }}</option>
+                                            @endforeach --}}
+                                            <option value="0">hi</option>
+                                            <option value="1">hello</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="form-group ">
-                                    <label class="col-sm-3 col-form-label" for="e7">برچسب‌های ویدیو</label>
-                                    <div id="output"></div>
-                                    <select class="chosen-select" id="e7" name="videoTag[]"
-                                        multiple="multiple" data-placeholder="انتخاب کنید" style="width:400px !important">
-                                        {{-- @foreach ($categories as $cat_id => $cat_name)
-                                            <option value="{{ $cat_id }}">{{ $cat_name }}</option>
-                                        @endforeach --}}
-                                        <option value="0">hi</option>
-                                        <option value="1">hello</option>
-                                    </select>
-                                </div>
+                            <div class="partak-area text-center mt-3">
+                                <button class="btn btn-outline-primary">ثبت تغییرات</button>
+                            </div>
+                            <hr>
+                            <div class="terms text-center">
+                                <p class="mb-0">ویدیو بارگذاری شده باید از
+                                    <a href="#">قوانین سایت </a>پیروی کند.
+                                </p>
                             </div>
                         </div>
-                        <div class="partak-area text-center mt-3">
-                            <button class="btn btn-outline-primary">ثبت تغییرات</button>
-                        </div>
-                        <hr>
-                        <div class="terms text-center">
-                            <p class="mb-0">ویدیو بارگذاری شده باید از
-                                <a href="#">قوانین سایت </a>پیروی کند.
-                            </p>
-                        </div>
                     </div>
-                </div>
 
-            </div>
+                </div>
         </form>
     </div>
     <script>
