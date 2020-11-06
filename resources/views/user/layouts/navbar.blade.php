@@ -21,60 +21,12 @@
 <!-- Navbar -->
 <ul class="navbar-nav mr-auto ml-md-1 pr-0 ml-sm-2 partak-right-navbar">
     <li class="nav-item mx-1">
-<<<<<<< HEAD
     <a class="nav-link rounded-pill" id="upload-btn" href="{{route('upload')}}">
            
-=======
-        <a class="nav-link rounded-pill" id="upload-btn" href="{{ route('upload') }}">
-            {{-- <i class="fas fa-plus-circle fa-fw"></i>
-            --}}
->>>>>>> 5fcbf3d86479114232862686a6d60eda8b3264ae
             <i class="fas fa-plus"></i>
             بارگذاری ویدیو
         </a>
     </li>
-<<<<<<< HEAD
-  
-
-
-    {{-- when user logged in show blow buttons --}}
-    <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="far fa-bell font-20"></i>
-            {{-- <span class="badge badge-danger">9+</span> --}}
-        </a>
-        <div class="dropdown-menu " aria-labelledby="alertsDropdown">
-            <span class="text">اعلان ها</span>
-            
-    </li>
-
-    <li class="nav-item dropdown no-arrow partak-right-navbar-user">
-        <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img alt="Avatar" src="{{ url('user/img/user.png') }}">
-        </a>
-        <div class="dropdown-menu text-right" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="{{route('channel')}}"><i class="fas fa-fw fa-user-circle"></i> پروفایل </a>
-            <a class="dropdown-item" href="subscriptions.html"><i class="fas fa-fw fa-video"></i> &nbsp;
-                ویدئو های من</a>
-            <a class="dropdown-item" href="settings.html"><i class="fas fa-fw fa-cog"></i> &nbsp; تنظیمات</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i
-                    class="fas fa-fw fa-sign-out-alt"></i> &nbsp; خروج از حساب کاربری</a>
-        </div>
-    </li>
-    @else
-    {{-- end of the buttons --}}
-
-  {{-- if user not logged in show login form link --}}
-  <li class="nav-item mx-1">
-    <a class="nav-link rounded-pill text-primary" href="{{route('login')}}">
-            ورود/ثبت نام
-        </a>
-    </li>
-    {{-- end of login link --}}
-=======
     @auth
         {{-- when user logged in show blow buttons --}}
         <li class="nav-item dropdown no-arrow mx-1">
@@ -123,6 +75,5 @@
         </li>
         {{-- end of login link --}}
     @endauth
->>>>>>> 5fcbf3d86479114232862686a6d60eda8b3264ae
 </ul>
 @endauth

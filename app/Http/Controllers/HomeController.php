@@ -25,4 +25,17 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    	/**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function notification()
+    {
+        session()->put('success','Item created successfully.');
+
+        return view('notification-check');
+    }
+
+
 }
