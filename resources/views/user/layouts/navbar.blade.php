@@ -16,8 +16,6 @@
     </div>
 </form>
 @auth
-    
-
 <!-- Navbar -->
 <ul class="navbar-nav mr-auto ml-md-1 pr-0 ml-sm-2 partak-right-navbar">
     <li class="nav-item mx-1">
@@ -27,7 +25,6 @@
             بارگذاری ویدیو
         </a>
     </li>
-    @auth
         {{-- when user logged in show blow buttons --}}
         <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
@@ -57,7 +54,6 @@
 
                 </div>
                 <form action="{{ route('logout') }}" method="POST">
-                    @csrf
                     <button class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         خروج از حساب
@@ -76,4 +72,3 @@
         {{-- end of login link --}}
     @endauth
 </ul>
-@endauth

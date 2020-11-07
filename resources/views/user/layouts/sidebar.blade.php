@@ -4,6 +4,7 @@
         <span>صفحه نخست</span>
     </a>
 </li>
+@auth
 <li class="nav-item">
     <a class="nav-link" href="index.html">
         <i class="fas fa-fw fa-home"></i>
@@ -16,6 +17,7 @@
         <span>ویدیوهای پسند شده</span>
     </a>
 </li>
+@endauth
 {{-- start categories --}}
 <li class="nav-item sidebar-part">
     <h6 class="sidebar-part-title">دسته‌بندی‌ها</h6>
