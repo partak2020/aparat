@@ -54,6 +54,7 @@
 
                 </div>
                 <form action="{{ route('logout') }}" method="POST">
+                    @csrf
                     <button class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-fw fa-sign-out-alt"></i>
                         خروج از حساب
