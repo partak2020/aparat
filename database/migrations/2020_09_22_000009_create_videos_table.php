@@ -23,11 +23,13 @@ class CreateVideosTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
             $table->string('fileAddress');
-            $table->string('name');
+            $table->string('title');
             $table->text('discription');
-            $table->tinyInteger('status')->default('0');
+            $table->boolean('status')->default(0);
+            $table->boolean('commentStatus')->default(0);
             $table->string('videoID', 5);
             $table->unsignedBigInteger('aparatcategory_ID');
+            $table->timestamp('duration');
             $table->timestamps();
 
             $table->foreign('aparatcategory_ID')

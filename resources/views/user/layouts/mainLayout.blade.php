@@ -53,7 +53,6 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <!-- Logout Modal-->
     {{-- @include('user.layouts.logout') --}}
     <script src="{{ url('user/js/jquery.min.js') }}"></script>
     <script src="{{ url('user/js/bootstrap.bundle.min.js') }}"></script>

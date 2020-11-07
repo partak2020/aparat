@@ -2,6 +2,11 @@
 @section('pageTitle', 'بارگذاری ویدیو')
 @section('content')
     <div>
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        @endif
         <form method="POST" action="{{ route('store.video') }}" enctype="multipart/form-data">
             @csrf
             <div id="waitForUploading" class="row pb-5">
@@ -43,7 +48,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="e1">عنوان ویدیو</label>
-                                        <input type="text" placeholder="عنوان ویدیو" id="e1" name="tilte"
+                                        <input type="text" placeholder="عنوان ویدیو" id="e1" name="title"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -58,12 +63,11 @@
                                 <div class="col-lg-3">
                                     <div class="form-group">
                                         <label for="e3">دسته‌بندی‌های آپارات</label>
-                                        <select id="e3" class="custom-select" name="aparatcategory_ID">
-                                            <option value="" disabled selected hidden>انتخاب کنید</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                        <select id="e3" class="custom-select" name="aparatcategory"
+                                            data-placeholder="انتخاب کنید">
+                                            @foreach ($categories as $category)
+                                                <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -91,13 +95,11 @@
                                     <div class="form-group" style="width: 100%">
                                         <label class="col-sm-3 col-form-label pr-0" for="e6">افزودن به لیست پخش</label>
                                         <div id="output"></div>
-                                        <select class="chosen-select" id="e6" name="videoTag[]" multiple="multiple"
+                                        <select class="chosen-select" id="e6" name="playlistVideo[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">
-                                            {{-- @foreach ($categories as $cat_id => $cat_name)
-                                                <option value="{{ $cat_id }}">{{ $cat_name }}</option>
-                                            @endforeach --}}
-                                            <option value="0">hi</option>
-                                            <option value="1">hello</option>
+                                            @foreach ($playlists as $playlist)
+                                                <option value="{{ $playlist->id }}">{{ $playlist->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -105,13 +107,11 @@
                                     <div class="form-group" style="width: 100%">
                                         <label class="col-sm-3 col-form-label pr-0" for="e7">برچسب‌های ویدیو</label>
                                         <div id="output"></div>
-                                        <select class="chosen-select" id="e7" name="videoTag[]" multiple="multiple"
+                                        <select class="chosen-select" id="e7" name="tags[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">
-                                            {{-- @foreach ($categories as $cat_id => $cat_name)
-                                                <option value="{{ $cat_id }}">{{ $cat_name }}</option>
-                                            @endforeach --}}
-                                            <option value="0">hi</option>
-                                            <option value="1">hello</option>
+                                            @foreach ($tags as $tag)
+                                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
