@@ -14,4 +14,5 @@ class AparatCategory extends Model
     protected $fillable = [
         'title', 'discription',
     ];
+    protected $table = 'aparatcategories';
 }
