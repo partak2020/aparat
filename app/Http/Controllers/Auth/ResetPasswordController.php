@@ -56,9 +56,6 @@ class ResetPasswordController extends Controller
     public function checkCode(Request $request)
     {
         $request->validate($this->rulesPhone(), $this->validationErrorMessages());
-        // $resualt = DB::table('password_resets')->first('token');
-        // dd($this->credentialsPhone($request));
-        // dd($this->credentialsPhone($request));
 
         // check in database that is there any token that same with user token ???
         // and returns respons with $response.
@@ -84,8 +81,6 @@ class ResetPasswordController extends Controller
      */
     protected function resetPasswordPhone(Request $request)
     {
-        // App::call('Illuminate\Auth\Passwords\PasswordBroker@delete',$user);
-
         $validate = $request->validate([
             'token' => ['required'],
             'password' => ['required', 'string', 'min:8']
