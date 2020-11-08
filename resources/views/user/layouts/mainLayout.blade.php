@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{ url('user/css/bootstrap-rtl.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/bootstrap-rtl.min.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/chosen.css') }}">
-    <link rel="stylesheet" href="{{ url('user/css/chosen.min.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -59,9 +58,7 @@
     <script src="{{ url('user/js/owl.carousel.js') }}"></script>
     <script src="{{ url('user/js/jquery.easing.min.js') }}"></script>
     <script src="{{ url('user/js/custom.js') }}"></script>
-    <script src="{{ url('user/js/chosen.proto.min.js') }}"></script>
     <script src="{{ url('user/js/chosen.proto.js') }}"></script>
-    <script src="{{ url('user/js/chosen.jquery.min.js') }}"></script>
     <script src="{{ url('user/js/chosen.jquery.js') }}"></script>
     <script>
         $(".chosen-select").chosen({
