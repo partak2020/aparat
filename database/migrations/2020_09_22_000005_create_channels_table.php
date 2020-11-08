@@ -29,7 +29,7 @@ class CreateChannelsTable extends Migration
             $table->string('password');
             $table->boolean('type')->default(0);
             $table->boolean('status')->default(1);
-            $table->string('name')->nullable()->default(null);
+            $table->string('name');
             $table->string('about')->nullable()->default(null);
             $table->string('websiteAddress')->nullable()->default(null);
             $table->string('lenzorAddress')->nullable()->default(null);
