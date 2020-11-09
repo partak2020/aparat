@@ -2,6 +2,9 @@
 @section('content')
     <div class="" id="content-wrapper">
         <div class="container-fluid ">
+            @if(session("successful"))
+                {{session("successful")}}
+            @endif
             <div class="single-channel-image">
                 <img class="img-fluid" alt="" src="{{ url('user/img/channel-banner.png') }}">
                 <div class="channel-profile">
