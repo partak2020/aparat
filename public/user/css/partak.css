@@ -26,6 +26,10 @@ Version: 1.0
 
 /* Body */
 
+ul , li {
+    list-style-type: none !important;
+}
+
 @font-face {
     font-family: iranSans;
     src: url(../font/iransans/IranianSans.ttf);
@@ -489,7 +493,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 footer.sticky-footer {
     background-color: #e9ecef;
     padding: 15px;
-    margin-right: 225px;
+    /* margin-right: 225px; */
 }
 
 footer.sticky-footer .copyright {

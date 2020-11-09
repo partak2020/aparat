@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="e3">دسته‌بندی‌های آپارات</label>
                                         <select id="e3" class="custom-select" name="aparatcategory"
@@ -71,7 +71,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="e4">انتشار ویدیو</label>
                                         <select id="e4" class="custom-select" name="status">
@@ -80,7 +80,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="e5">ارسال دیدگاه</label>
                                         <select id="e5" class="custom-select" name="commentStatus">
@@ -91,9 +91,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-lg-3">
+                                <div class="col-lg-6">
                                     <div class="form-group" style="width: 100%">
-                                        <label class="col-sm-3 col-form-label pr-0" for="e6">افزودن به لیست پخش</label>
+                                        <label class=" col-form-label pr-0" for="e6">افزودن به لیست پخش</label>
                                         <div id="output"></div>
                                         <select class="chosen-select" id="e6" name="playlistVideo[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">
@@ -103,9 +103,9 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-6">
                                     <div class="form-group" style="width: 100%">
-                                        <label class="col-sm-3 col-form-label pr-0" for="e7">برچسب‌های ویدیو</label>
+                                        <label class=" col-form-label pr-0" for="e7">برچسب‌های ویدیو</label>
                                         <div id="output"></div>
                                         <select class="chosen-select" id="e7" name="tags[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">

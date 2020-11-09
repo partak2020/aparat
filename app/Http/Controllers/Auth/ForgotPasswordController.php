@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Password;
 use App\Rules\UserName;
 use App\Rules\PhoneNumber;
 use App\User;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Illuminate\Support\Facades\Session;
 
 class ForgotPasswordController extends Controller
 {
@@ -198,4 +200,22 @@ class ForgotPasswordController extends Controller
     {
         $request->validate(['username' => new UserName]);
     }
+
+    
+    /**
+     * Get the response for a successful password reset code 
+     * and show user form for receive code.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string  $response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
+     */
+    protected function sendResetCodeResponse(Request $request, $response)
+    {
+        Session::put('phoneNo',  $request->phoneNo);
+        return $request->wantsJson()
+                    ? new JsonResponse(['message' => trans($response)], 200)
+                    : redirect()->route('code.validation');
+    }
+
 }
