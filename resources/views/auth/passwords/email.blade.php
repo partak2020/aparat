@@ -1,25 +1,5 @@
 @extends('layouts.loginLayout')
 @section('form')
-    @if ($errors->any())
-        @foreach ($errors->all() as $error)
-            {{ $error }}
-        @endforeach
-    @endif
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
-    @if (session('message'))
-        <div class="alert alert-success" role="alert">
-            {{ session('message') }}
-        </div>
-    @endif
-    @if (session('phoneNo'))
-        <div class="alert alert-success" role="alert">
-            {{ session('phoneNo') }}
-        </div>
-    @endif
     <form class="text-right" dir="rtl" method="POST" action="{{ route('password.email') }}">
         @csrf
         <div class="text-center mt-5">

@@ -2,11 +2,6 @@
 @section('pageTitle', 'بارگذاری ویدیو')
 @section('content')
     <div>
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                {{ $error }}
-            @endforeach
-        @endif
         <form method="POST" action="{{ route('store.video') }}" enctype="multipart/form-data">
             @csrf
             <div id="waitForUploading" class="row pb-5">
