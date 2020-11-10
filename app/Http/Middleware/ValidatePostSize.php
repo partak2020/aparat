@@ -1,10 +1,5 @@
 <?php
-/**
- * lucasmichot Dry-up getPostMaxSize function. (#19774)
- * Latest commit 8167355 on Jun 26, 2017
- * framework/src/Illuminate/Foundation/Http/Middleware/ValidatePostSize.php
- *
- */
+
 namespace Illuminate\Foundation\Http\Middleware;
 
 use Closure;
