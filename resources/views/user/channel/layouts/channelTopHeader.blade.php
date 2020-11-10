@@ -1,4 +1,7 @@
 <div class="container-fluid ">
+    @if (session('successful'))
+        {{ session('successful') }}
+    @endif
     <div class="single-channel-image">
         <img class="img-fluid" alt="" src="{{ url('user/img/channel-banner.png') }}">
         <div class="channel-profile">
@@ -21,23 +24,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item @hasSection('active_home') @yield('active_home')  @endif">
+                <li class="nav-item @hasSection('active_home') @yield('active_home')   @endif">
                     <a class="nav-link" href="{{ route('channel') }}">خانه <span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item @hasSection('active_videos') @yield('active_videos') 
-                    @endif">
+                 @endif">
                     <a class="nav-link" href="{{ route('channel.videos') }}">همه ویدیو ها</a>
                 </li>
                 <li class="nav-item @hasSection('active_playlists') @yield('active_playlists') 
-                    @endif">
+                 @endif">
                     <a class="nav-link" href="{{ route('channel.playLists') }}">لیست پخش</a>
                 </li>
-            <li class="nav-item @hasSection('active_info') @yield('active_info')  @endif">
+            <li class="nav-item @hasSection('active_info') @yield('active_info')   @endif">
                 <a class="nav-link" href="{{ route('channel.info') }}">درباره کانال</a>
             </li>
             <li class="nav-item @hasSection('active_setting') @yield('active_setting') 
-                @endif">
+         @endif">
                 <a class="nav-link" href="{{ route('channel.setting.edit') }}">تنظیمات حساب</a>
             </li>
         </ul>

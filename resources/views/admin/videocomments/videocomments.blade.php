@@ -17,14 +17,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            @foreach ($comments as $comment)
-                                <td>{{ dd($loop) }}</td>
+                        @foreach ($comments as $comment)
+                            <tr>
+                                <td>{{ $loop->count }}</td>
                                 <td>{{ $comment->id }}</td>
                                 <td>{{ $comment->discription }}</td>
-                            @endforeach
-
-                        </tr>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -33,7 +33,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/upload', 'uploadvideo\UploadVideoController@index')->name('upload');
-Route::post('/upload', 'uploadvideo\UploadVideoController@store')->name('store.video');//->middleware('ValidatePostSize');
+Route::post('/upload', 'uploadvideo\UploadVideoController@store')->name('store.video')->middleware('ValidatePostSize');
 
 Route::prefix('channel')->group(function () {
     Route::get('/', 'user\UserController@channelIndex')->name('channel');
@@ -86,4 +86,3 @@ Route::prefix('admin')->group(function () {
     Route::get('/playlists', 'playlist\PlaylistController@index')->name('admin.playlists.index');
 });
 // Route::get('/home', 'HomeController@index')->name('home');
-
