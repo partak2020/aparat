@@ -25,7 +25,7 @@
     <section class="login-main-wrapper">
         <div class="container-fluid pl-0 pr-0">
             <div class="row no-gutters">
-
+                @include('user.layouts.notification')
                 <div class="col-md-5 p-5 bg-light full-height">
                     <div class="login-main-left">
                         <div class="text-center mb-5 login-main-left-header pt-4">
