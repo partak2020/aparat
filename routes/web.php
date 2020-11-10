@@ -35,9 +35,19 @@ Route::get('/', function () {
 Route::get('/upload', 'uploadvideo\UploadVideoController@index')->name('upload');
 Route::post('/upload', 'uploadvideo\UploadVideoController@store')->name('store.video');//->middleware('ValidatePostSize');
 
-Route::get('/channel', function () {
-    return view('user.channel.channel');
-})->name('channel');
+Route::prefix('channel')->group(function () {
+    Route::get('/', 'user\UserController@channelIndex')->name('channel');
+    Route::get('/videos', 'user\UserController@showVideos')->name('channel.videos');
+    Route::get('/playlists', 'user\UserController@showPlayLists')->name('channel.playLists');
+    Route::get('/info', 'user\UserController@showInfo')->name('channel.info');
+    Route::get('/setting', 'user\UserController@settingEdit')->name('channel.setting.edit');
+    Route::post('/setting', 'user\UserController@settingupdate')->name('channel.setting.update');
+
+});
+
+Route::get('/video', function () {
+    return view('user.video.show');
+})->name('video');
 
 
 Route::post('/password/update/phone', 'Auth\ResetPasswordController@resetPasswordPhone')

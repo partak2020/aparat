@@ -8,6 +8,8 @@ use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class UserController extends Controller
 {
@@ -19,9 +21,9 @@ class UserController extends Controller
     public function index()
     {
         //return user list
-        $users = User::orderby('id','DESC')->get();
+        $users = User::orderby('id', 'DESC')->get();
         //dd($users);
-        return view('admin.users.users',compact('users'));
+        return view('admin.users.users', compact('users'));
     }
 
     /**
@@ -90,25 +92,87 @@ class UserController extends Controller
         //
     }
 
-    public function filed_type(request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function channelIndex()
     {
-        // $validation = $request->validate(['unique_field' => 'required|regex:/(01)[0-9]{9}/']);
-        // $request->session()->reflash('errors', 'Your mobile number not match in our system..!!');
-        // $validator = new validator();
-        // $validator->getMessageBag()->add('password', 'Password wrong');
-
-        // $unique_field = $request->unique_field;
-        // $result = 'hh';
-        // if (is_numeric($unique_field)) {
-        //     //user insert phone number for login
-
-        //     $validation = $request->validate(['unique_field' => ['required',new PhoneNumber]]);
-        //     dd($validation);
-        //     $result = 'you are logig with phone number';
-        // } elseif (filter_var($unique_field, FILTER_VALIDATE_EMAIL)) {
-        //     // user insert email for login
-        //     $result = 'you are logig with email address';
-        // }
-        // return view('welcome');
+        $adminChannel = $this->adminChannel('1');
+        // $userInfo = User::where('id', auth::id())->get();
+        return view('user.channel.channel' , compact('adminChannel'));
     }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showVideos()
+    {
+        $adminChannel = $this->adminChannel('1');
+        // $userInfo = User::where('id', auth::id())->get();
+        return view('user.channel.allVideos' , compact('adminChannel'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showPlayLists()
+    {
+        $adminChannel = $this->adminChannel('1');
+        // $userInfo = User::where('id', auth::id())->get();
+        return view('user.channel.playlists' , compact('adminChannel'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showInfo()
+    {
+        $adminChannel = $this->adminChannel('1');
+        // $userInfo = User::where('id', auth::id())->get();
+        return view('user.channel.about' , compact('adminChannel'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function settingEdit()
+    {
+        $adminChannel = $this->adminChannel('1');
+        // $userInfo = User::where('id', auth::id())->get();
+        return view('user.channel.setting' , compact('adminChannel'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function settingupdate()
+    {
+        dd('update setting');
+        // $userInfo = User::where('id', auth::id())->get();
+        // return view('user.channel.channel', compact('iserInfo'));
+    }
+
+    /**
+     * check this user is channel admin?
+     *
+     * @return Boolean
+     */
+    public function adminChannel($id)
+    {
+        return (auth::id() == $id);
+    }
+
 }

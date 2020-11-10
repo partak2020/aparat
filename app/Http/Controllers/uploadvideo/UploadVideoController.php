@@ -29,7 +29,7 @@ class UploadVideoController extends Controller
         //dd($request);
 
         $this->validate($request, [
-            'inputFile' => 'required|max:1024M',
+            'inputFile' => 'required',
             'title' => 'required|string',
             'discription' => 'required|different:title|string',
             'aparatcategory' => 'required',
