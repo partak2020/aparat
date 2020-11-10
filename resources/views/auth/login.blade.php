@@ -1,12 +1,6 @@
 @extends('layouts.loginLayout')
 @section('pageTitle', 'ورود')
 @section('form')
-    @if ($errors->any())
-        {{-- {{ dd($errors) }} --}}
-        @foreach ($errors->all() as $error)
-            {{$error}}
-        @endforeach
-    @endif
     <form action="{{ route('login') }}" method="POST" class="">
         @csrf
         <div class="form-group">

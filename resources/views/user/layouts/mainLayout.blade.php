@@ -23,6 +23,8 @@
 </head>
 
 <body id="page-top">
+    @include('user.layouts.notification')
+
     <nav class="navbar navbar-expand navbar-light bg-white static-top partak-nav sticky-top">
         @include('user.layouts.navbar')
     </nav>
