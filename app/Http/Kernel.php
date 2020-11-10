@@ -64,6 +64,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'validatePostSize' => \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        'ValidatePostSize' => \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
     ];
 }
