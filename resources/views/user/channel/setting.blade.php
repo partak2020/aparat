@@ -11,6 +11,7 @@
                     <div class="col-md-12">
                         <div class="main-title">
                             <h6>تنظیمات حساب کاربری</h6>
+                            <p>هم اکنون امکان تغییر اطلاعات حساب را ندرید.</p>
                         </div>
                     </div>
                     <form method="POST" action="{{ route('store.video') }}" enctype="multipart/form-data">
@@ -21,52 +22,40 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="e1">عنوان ویدیو</label>
-                                                <input type="text" placeholder="عنوان ویدیو" id="e1" name="title"
+                                                <label for="e1">نام</label>
+                                                <input disabled type="text" placeholder="نام"  name="name"
+                                                value="@if($userInfo->name) {{$userInfo->name}} @endif"
                                                     class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-group">
-                                                <label for="e2">توضیحات ویدیو</label>
-                                                <textarea rows="3" id="e2" name="discription"
-                                                    class="form-control"></textarea>
+                                                <label for="e2">ایمیل</label>
+                                                <input disabled type="email" placeholder="ایمیل" name="email"
+                                                value="@if($userInfo->email) {{$userInfo->email}} @endif"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="e2">شماره موبایل</label>
+                                                <input disabled type="number" placeholder="شماره موبایل" name="phoneNo"
+                                                value="@if($userInfo->phoneNo) {{$userInfo->phoneNo}} @endif"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label for="e2">نام کاربری</label>
+                                                <input disabled type="text" placeholder="نام کاربری" name="username"
+                                                value="@if($userInfo->username) {{$userInfo->username}} @endif"
+                                                    class="form-control">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for="e3">دسته‌بندی‌های آپارات</label>
-                                                <select id="e3" class="custom-select" name="aparatcategory"
-                                                    data-placeholder="انتخاب کنید">
-                                                    <option value="">ieh;awi </option>
-                                                    <option value="">ieh;awi </option>
-                                                    <option value="">ieh;awi </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for="e4">انتشار ویدیو</label>
-                                                <select id="e4" class="custom-select" name="status">
-                                                    <option value="0">ذخیره، بعدا منتشر میکنم.</option>
-                                                    <option value="1">منتشر شود.</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <div class="form-group">
-                                                <label for="e5">ارسال دیدگاه</label>
-                                                <select id="e5" class="custom-select" name="commentStatus">
-                                                    <option value="0">امکان نظردهی برای همه غیرفعال باشد.</option>
-                                                    <option value="1">امکان نظردهی برای همه آزاد باشد.</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="partak-area text-center mt-3">
-                                        <button class="btn btn-outline-primary">ثبت تغییرات</button>
+                                        <button disabled class="btn btn-outline-primary mb-3">ثبت تغییرات</button>
                                     </div>
                                 </div>
                             </div>
