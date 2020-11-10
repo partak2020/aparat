@@ -1,4 +1,5 @@
 @extends('layouts.loginLayout')
+@section('pageTitle', 'ورود')
 @section('form')
     @if ($errors->any())
         {{-- {{ dd($errors) }} --}}

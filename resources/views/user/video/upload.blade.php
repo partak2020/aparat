@@ -47,14 +47,14 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label for="e1">عنوان ویدیو</label>
+                                        <label for="e1">عنوان ویدیو (الزامی)</label>
                                         <input type="text" placeholder="عنوان ویدیو" id="e1" name="title"
                                             class="form-control">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label for="e2">توضیحات ویدیو</label>
+                                        <label for="e2">توضیحات ویدیو (الزامی)</label>
                                         <textarea rows="3" id="e2" name="discription" class="form-control"></textarea>
                                     </div>
                                 </div>
@@ -63,8 +63,7 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="e3">دسته‌بندی‌های آپارات</label>
-                                        <select id="e3" class="custom-select" name="aparatcategory"
-                                            data-placeholder="انتخاب کنید" style="width:400px">
+                                        <select id="e3" class="custom-select" name="aparatcategory" style="width:400px">
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->title }}</option>
                                             @endforeach
@@ -93,7 +92,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group" style="width: 100%">
-                                        <label class="col-form-label pr-0" for="e6">افزودن به لیست پخش</label>
+                                        <label class="col-form-label pr-0" for="e6">افزودن به لیست پخش (الزامی)</label>
                                         <div id="output"></div>
                                         <select class="chosen-select" id="e6" name="playlistVideo[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">
@@ -105,7 +104,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group" style="width: 100%">
-                                        <label class=" col-form-label pr-0" for="e7">برچسب‌های ویدیو</label>
+                                        <label class=" col-form-label pr-0" for="e7">برچسب‌های ویدیو (الزامی)</label>
                                         <div id="output"></div>
                                         <select class="chosen-select" id="e7" name="tags[]" multiple="multiple"
                                             data-placeholder="انتخاب کنید" style="width:400px">

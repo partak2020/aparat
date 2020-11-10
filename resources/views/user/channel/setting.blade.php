@@ -1,4 +1,5 @@
 @extends('user.channel.layouts.mainLayout')
+@section('pageTitle', 'صفحه شخصی')
 @section('active_setting', 'active')
 @section('content')
     <div class="" id="content-wrapper">

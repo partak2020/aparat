@@ -1,4 +1,5 @@
 @extends('user.channel.layouts.mainLayout')
+@section('pageTitle', 'صفحه شخصی')
 @section('active_home' ,'active')    
 @section('content')
     <div class="" id="content-wrapper">
@@ -16,11 +17,11 @@
                    <p class="col text-center"> صفحه خانه شما خالی می باشد. </p>
                 </div>
             </div>
+            <!-- /.container-fluid -->
+            <!-- Sticky Footer -->
+            <footer class="sticky-footer ml-0">
+                @include('user.layouts.footer')
+            </footer>
         </div>
-        <!-- /.container-fluid -->
-        <!-- Sticky Footer -->
-        <footer class="sticky-footer ml-0">
-            @include('user.layouts.footer')
-        </footer>
     </div>
 @endsection

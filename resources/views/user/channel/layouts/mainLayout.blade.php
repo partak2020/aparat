@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Askbootstrap">
     <meta name="author" content="Askbootstrap">
-    <title>VIDOE - Video Streaming Website HTML Template</title>
+    <title>@yield('pageTitle')</title>
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="{{ url('user/img/favicon.png') }}">
     <!-- Bootstrap core CSS-->

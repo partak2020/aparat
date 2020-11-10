@@ -1,4 +1,5 @@
 @extends('user.layouts.mainLayout')
+@section('pageTitle', 'آپارات - سرویس اشتراک ویدیو')
 @section('content')
     <div class="video-block section-padding">
         <div class="row">

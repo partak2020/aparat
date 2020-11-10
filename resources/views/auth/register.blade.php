@@ -1,4 +1,5 @@
 @extends('layouts.loginLayout')
+@section('pageTitle', 'ثبت نام')
 @section('form')
 <form action="{{route('register')}}" method="POST" class="">
     @csrf
