@@ -33,12 +33,8 @@
                 <span class="badge badge-danger">9+</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-                <a class="dropdown-item" href="#"><i class="fas fa-fw fa-edit "></i> &nbsp; Action</a>
-                <a class="dropdown-item" href="#"><i class="fas fa-fw fa-headphones-alt "></i> &nbsp; Another
-                    action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="fas fa-fw fa-star "></i> &nbsp; Something else here</a>
-            </div>
+                <a  class="dropdown-item disabled" href="#">اعلانی ندارید</a>
+                </div>
         </li>
         <li class="nav-item dropdown no-arrow partak-right-navbar-user">
             <a class="nav-link dropdown-toggle user-dropdown-link" href="#" id="userDropdown" role="button"
@@ -47,9 +43,8 @@
             </a>
             <div class="dropdown-menu text-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="{{ route('channel') }}"><i class="fas fa-fw fa-user-circle"></i> پروفایل </a>
-                <a class="dropdown-item" href="subscriptions.html"><i class="fas fa-fw fa-video"></i> &nbsp;
-                    Subscriptions</a>
-                <a class="dropdown-item" href="settings.html"><i class="fas fa-fw fa-cog"></i> &nbsp; Settings</a>
+                
+            <a class="dropdown-item" href="{{route('channel.setting.edit')}}"><i class="fas fa-fw fa-cog"></i> تنظیمات حساب</a>
                 <div class="dropdown-divider">
 
                 </div>
