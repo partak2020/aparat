@@ -39,7 +39,6 @@ class UploadVideoController extends Controller
             'tags' => 'required'
         ]);
 
-        //dd($request);
 
         $uploadedVideo = new Video;
 
@@ -60,11 +59,13 @@ class UploadVideoController extends Controller
         $uploadedVideo->status = $request->status;
         $uploadedVideo->commentStatus = $request->commentStatus;
         $uploadedVideo->videoID = $videoId;
+        $uploadedVideo->user_ID = Auth::id();
+        $uploadedVideo->user_name = Auth::user()->name;
         $uploadedVideo->aparatcategory_ID = $request->aparatcategory;
         $uploadedVideo->duration = now();
         $uploadedVideo->save();
 
-        return view("user.channel.channel")->with("successful","ویدیوهای شما با موفقیت منتشر شد!
-        پس از پردازشی کوتاه بر روی آپارات به نمایش در خواهد آمد.");
+        return redirect()->route("channel")->witherrors(["successful" => "ویدیوهای شما با موفقیت منتشر شد!
+        پس از پردازشی کوتاه بر روی آپارات به نمایش در خواهد آمد."]);
     }
 }
