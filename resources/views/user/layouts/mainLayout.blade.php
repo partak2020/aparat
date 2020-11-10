@@ -65,9 +65,8 @@
         $(".chosen-select").chosen({
             rtl: true
         });
-        if (document.getElementById("e3_chosen") && document.getElementById("e6_chosen") && document.getElementById(
+        if (document.getElementById("e6_chosen") && document.getElementById(
                 "e7_chosen")) {
-            document.getElementById("e3_chosen").style.width = "100%";
             document.getElementById("e6_chosen").style.width = "100%";
             document.getElementById("e7_chosen").style.width = "100%";
         }
