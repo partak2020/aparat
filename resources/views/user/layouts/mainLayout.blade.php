@@ -38,11 +38,12 @@
                     @include('user.layouts.mobileSearch')
                 </div>
                 @yield('content')
-            </div>
-            <!--Footer -->
-            <footer class="sticky-footer">
+                <!--Footer -->
+            <footer class="sticky-footer w-100">
                 @include('user.layouts.footer')
             </footer>
+            </div>
+            
         </div>
     </div>
     <!-- /.content-wrapper -->
