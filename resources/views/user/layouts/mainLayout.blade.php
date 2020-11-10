@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="{{ url('user/img/favicon.png') }}">
     <!-- Bootstrap core CSS-->
     <link rel="stylesheet" href="{{ url('user/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('user/font/css/all.min.css') }}"> 
+    <link rel="stylesheet" href="{{ url('user/font/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/partak.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ url('user/css/owl.theme.css') }}">
@@ -64,7 +64,9 @@
         $(".chosen-select").chosen({
             rtl: true
         });
-        if (document.getElementById("e6_chosen") && document.getElementById("e7_chosen")) {
+        if (document.getElementById("e3_chosen") && document.getElementById("e6_chosen") && document.getElementById(
+                "e7_chosen")) {
+            document.getElementById("e3_chosen").style.width = "100%";
             document.getElementById("e6_chosen").style.width = "100%";
             document.getElementById("e7_chosen").style.width = "100%";
         }
@@ -73,6 +75,8 @@
             document.getElementById("waitForUploading").style.display = "none";
             document.getElementById("Uploading").style.display = "block";
         }
+
     </script>
 </body>
+
 </html>
