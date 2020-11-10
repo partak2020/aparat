@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\user;
 
+use App\Follower;
 use Symfony\Component\HttpFoundation\Session\Session;
 use App\Http\Controllers\Controller;
+use App\Playlist;
 use App\Rules\PhoneNumber;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 use App\User;
+use App\Video;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Boolean;
 
@@ -99,9 +102,9 @@ class UserController extends Controller
      */
     public function channelIndex()
     {
-        $adminChannel = $this->adminChannel('1');
-        // $userInfo = User::where('id', auth::id())->get();
-        return view('user.channel.channel' , compact('adminChannel'));
+        $userInfo = User::where('id', auth::id())->first();
+        $followers = Follower::where('follower_ID' , auth::id())->count();
+        return view('user.channel.channel' , compact('userInfo'));
     }
 
 
@@ -112,9 +115,9 @@ class UserController extends Controller
      */
     public function showVideos()
     {
-        $adminChannel = $this->adminChannel('1');
-        // $userInfo = User::where('id', auth::id())->get();
-        return view('user.channel.allVideos' , compact('adminChannel'));
+        $userInfo = User::where('id', auth::id())->first();
+        $videos = Video::where('user_ID')->get();
+        return view('user.channel.allVideos' , compact('userInfo' , 'videos'));
     }
 
     /**
@@ -124,9 +127,9 @@ class UserController extends Controller
      */
     public function showPlayLists()
     {
-        $adminChannel = $this->adminChannel('1');
-        // $userInfo = User::where('id', auth::id())->get();
-        return view('user.channel.playlists' , compact('adminChannel'));
+        $userInfo = User::where('id', auth::id())->first();
+        $playLists = Playlist::where('channel_ID')->get();
+        return view('user.channel.playlists' , compact('userInfo' , 'playLists'));
     }
 
     /**
@@ -136,9 +139,8 @@ class UserController extends Controller
      */
     public function showInfo()
     {
-        $adminChannel = $this->adminChannel('1');
-        // $userInfo = User::where('id', auth::id())->get();
-        return view('user.channel.about' , compact('adminChannel'));
+        $userInfo = User::where('id', auth::id())->first();
+        return view('user.channel.about' , compact('userInfo'));
     }
 
     /**
@@ -148,9 +150,8 @@ class UserController extends Controller
      */
     public function settingEdit()
     {
-        $adminChannel = $this->adminChannel('1');
-        // $userInfo = User::where('id', auth::id())->get();
-        return view('user.channel.setting' , compact('adminChannel'));
+        $userInfo = User::where('id', auth::id())->first();
+        return view('user.channel.setting' , compact('userInfo'));
     }
 
     /**
@@ -160,7 +161,7 @@ class UserController extends Controller
      */
     public function settingupdate()
     {
-        dd('update setting');
+       
         // $userInfo = User::where('id', auth::id())->get();
         // return view('user.channel.channel', compact('iserInfo'));
     }
