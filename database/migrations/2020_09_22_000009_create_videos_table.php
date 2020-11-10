@@ -28,12 +28,19 @@ class CreateVideosTable extends Migration
             $table->boolean('status')->default(0);
             $table->boolean('commentStatus')->default(0);
             $table->string('videoID', 5);
+            $table->string('user_name');
             $table->unsignedBigInteger('aparatcategory_ID');
+            $table->unsignedBigInteger('user_ID');
             $table->timestamp('duration');
             $table->timestamps();
 
             $table->foreign('aparatcategory_ID')
                 ->references('id')->on('aparatcategories')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+                
+                $table->foreign('user_ID')
+                ->references('id')->on('channels')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
